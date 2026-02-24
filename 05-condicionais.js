@@ -117,26 +117,20 @@ console.log("\n-----------------\n\n");
 // Acima de R$ 100? 10% de desconto.
 // Até R$ 100? Zero de desconto.
 // Você deve programar o código necessário para verificar estas faixas de valores e calcular o desconto em cima do valor da compra. 
-let desconto;
-let valorCompra = 101;
-let valorFinal;
-let perc;
-if (valorCompra > 300){
-    desconto = valorCompra * 0.2
-    perc = 20
-} else if ( valorCompra > 100) {
-    desconto = valorCompra * 0.1
-    perc = 10
-} else {
-    desconto = 0
-    perc = 0
-}
-valorFinal = valorCompra -  desconto;
+let desconto = 0; // padrão é não ter desconto
+let valorCompra = 100;
 
+if (valorCompra > 300){
+    desconto = 0.20;
+} else if ( valorCompra > 100) {
+    desconto = 0.10;
+}
+let valorFinal = valorCompra - valorCompra * desconto;
+let diferenca = valorCompra - valorFinal;
 console.log("Valor da compra: R$"+ valorCompra);
-console.log("Desconto de: "+ perc+"%");
+console.log("Desconto de: " + (desconto*100) + "%");
 console.log("Valor final da compra: R$"+ valorFinal);
-console.log("Economizou R$:"+ desconto);
+console.log("Economizou: R$"+ diferenca);
 
 // Deve também exibir o valor original, o percentual de desconto, o valor final da compra e quanto economizou.
  
