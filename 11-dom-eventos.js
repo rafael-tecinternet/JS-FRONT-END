@@ -24,10 +24,23 @@ buttonSubtrair.addEventListener("click", () => {
 const buttomMostrarEsconder = document.querySelector(".mostrar-esconder");
 const pTexto = document.querySelector(".texto");
 buttomMostrarEsconder.addEventListener("click", () => {
-    if (pTexto.classList.toggle("oculto")){
+    pTexto.classList.toggle("oculto")
+    /* if (pTexto.classList.toggle("oculto")){
         buttomMostrarEsconder.textContent = "Mostrar"
     } else { 
         buttomMostrarEsconder.textContent = "Esconder" 
-    }    
+    }  */
+    // Solução 1: Analisando o conteúdo/texto do botão   
+   /*  if (buttomMostrarEsconder.textContent === "Esconder"){
+        buttomMostrarEsconder.textContent = "Mostrar"
+    } else { 
+        buttomMostrarEsconder.textContent = "Esconder" 
+    }  */
+    //Solução 2: Analisando se a classe está aplicada no texto
+    if (pTexto.classList.contains("oculto")) {
+        buttomMostrarEsconder.textContent = "Mostrar"
+    } else {
+        buttomMostrarEsconder.textContent = "Esconder"
+    }   
 });
 /* Exemplo 3 */
